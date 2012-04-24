@@ -1,0 +1,3 @@
+
+$ perl gen_innodb_warmup_sql.pl --db=XXXX --dbuser=XXXX --dbpass=XXXX --dbhost=XXXX > innodb_warmup.sql
+
