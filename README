@@ -1,3 +1,8 @@
-
 $ perl gen_innodb_warmup_sql.pl --db=XXXX --dbuser=XXXX --dbpass=XXXX --dbhost=XXXX > innodb_warmup.sql
 
+↓
+
+-- table: shop_data, length: 16384
+SELECT SUM(LENGTH(`id`)) AS `shop_data_PRIMARY` FROM `shop_data` FORCE INDEX (`PRIMARY`);
+SELECT SUM(LENGTH(`data_dir_id`)) AS `shop_data_idx_dir_id` FROM `shop_data` FORCE INDEX (`idx_dir_id`);
+SELECT SUM(LENGTH(`data_template_id`)) AS `shop_data_shop_data_FI_1` FROM `shop_data` FORCE INDEX (`shop_data_FI_1`);
